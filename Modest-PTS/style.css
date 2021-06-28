@@ -86,7 +86,7 @@ header .container ul li a.active{
     background-image: url(images/banner.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-
+    background-color: #021f30;
 }
 #hero .container{
     height:610px;
