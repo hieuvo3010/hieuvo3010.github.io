@@ -3,9 +3,6 @@
     margin: 0px;
     box-sizing: border-box;
 }
-li{
-    
-}
 a:link{
     text-decoration: none;
 }
@@ -44,8 +41,9 @@ body{
     font-family: "Roboto", sans-serif;
 }
 .container{
-    max-width: 1140px;
-    margin:0px auto;
+    max-width: 1170px;
+    margin: 0px auto;
+    padding: 0px 15px;
 }
 /* header */
 header .container{
@@ -155,16 +153,15 @@ header .container ul li a.active{
 
 /**about**/
 #about{
-    height:530px;
-    border: 2px solid #dde1e4;
+    border-bottom: 2px solid #dde1e4;
 }
 #about .container{
-    height:530px;
-    padding-top: 83px;
+    padding-top: 83px;  
 }
 #team-list-about {
     display:flex;
     justify-content:space-between;
+    margin-bottom: 50px;
 }
 #team-list-about div:first-child{
     width: 654px;
@@ -211,7 +208,6 @@ header .container ul li a.active{
 }
 #about ol{
     counter-reset: about;
-    
 }
 #about ol li{
     list-style: none;
@@ -254,15 +250,19 @@ header .container ul li a.active{
     display: flex;
     justify-content:space-between;
 }
+#team-list > div
+{
+    width: calc( (100% - 90px) / 4 );
+}
 #team-list ul li{
     list-style: none;
 }
 
 #team-list img {
     display:block;
+    max-width: 100%;
 }
 #team-list .info{
-    height:75px;
     background-color:#e1e6ea;
     padding:20px 20px 0px 20px;
 }
@@ -339,6 +339,7 @@ header .container ul li a.active{
 
 /* WORK */
 #work .container img{
+    display: block;
     max-width: 100%;
 }
 #work{
@@ -349,15 +350,16 @@ header .container ul li a.active{
     margin-bottom: 60px;
     color: white;
 }
-#work .container > div {
+
+#work .container #work-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content:space-between;
 }
-#work .container > div > div{
+#work .container #work-list > div{
     position:relative;
-    width: calc((100% -60px))/3;
+    width: calc( (100% - 60px ) / 3);
     margin-bottom: 30px;
 }
 #work .container .mask{
@@ -371,13 +373,12 @@ header .container ul li a.active{
 #work .container .mask h4{
     display:none;
     position:absolute;
-    width: 100%;
+    max-width: 100%;
     bottom:0px;
     left: 0px;
 }
-#work .container > div > div:hover .mask h4{
+#work .container #work-list > div:hover .mask h4{
     display: block;
-    height:58px;
     line-height:58px;
     background-color: #292f36;
     width: 100%;
@@ -387,7 +388,7 @@ header .container ul li a.active{
     color:#ffffff;
     text-transform: uppercase;
 }
-#work .container > div > div:hover .mask{
+#work .container #work-list  > div:hover .mask{
     background: rgb(41,47,54,0.5) url(images/plus.png) no-repeat center 100px;
     background-color: rgb(41,47,54,0.5);
     cursor: pointer;
@@ -489,7 +490,7 @@ div#do .container ul li:nth-child(7):before{
 div#do .container ul li:nth-child(8):before{
     background-image: url(images/setting.png);
     background-repeat: no-repeat;
-}
+}   
 
 
 div#features{
@@ -526,7 +527,7 @@ div#features-list{
     justify-content:space-between;
 }
 div#features-list div {
-    width: (calc(100% - 30px) /3);
+    width: calc( (100% - 30px) /3);
 }
 
 
@@ -536,10 +537,11 @@ stay */
 div#stay{
     color: #292f36;
     margin-top:65px;
-    position: relative;
 }
-#stay .container{
-    margin-top:65px;
+#stay h2{
+    max-width: 1140px;
+    margin:0px auto;
+    margin-bottom: 65px;
 }
 #stay #map{
     display:block;
@@ -547,22 +549,20 @@ div#stay{
     background-image: url(images/map.png);
     background-repeat: no-repeat;
     background-size: cover ;
+    background-position: center center;
     width: 100%;
-    
+    z-index: 1;
 }
-#stay h2{
-    max-width: 1140px;
-    margin:0px auto;
-    margin-bottom: 65px;
+#stay .container > div{
+    z-index: 2;
+    margin-top: -130px;
+    display:flex;
+    justify-content:space-between;
 }
 
-#stay .container{
-    margin-top: 60px;
-    height:300px;
-}
-#stay-info {
-    display: inline-block;
-    width: 580px;
+#stay-info,
+#stay-info-f{
+    width: calc( (100% - 30px) / 2);
 }
 #stay-info h4{
     font-size:20px;
@@ -570,78 +570,78 @@ div#stay{
     font-weight: normal;
     color: #292f36;
     text-transform: uppercase;
-    
+    margin-bottom: 33px;
+}
+#stay-info{
+    padding-top: 187px;;
 }
 #stay-info p{
     font-size:16px;
     line-height:26px;
     font-weight: normal;
     color: #8d8f92;
-    margin-bottom: 31px;
+    margin-bottom: 26px;
 }
-#stay .container > div > form{
-    display:inline-block;
-    width: 555px;
-    position: absolute;
-    top:363px;
+#stay .container >div > div > form{
     margin-left: 30px;
     background-color: white;
     padding:30px;
 }
-#stay .container > div > form label {
+#stay .container form #form-info{
+    display:flex;
+    justify-content:space-between;
+}
+#stay .container form #form-info > div{
+    width: calc( (100% - 30px) / 2);
+}
+#stay .container form label {
     color: #8d8f92;
     font-size:14px;
     line-height: 26px;
     display:block;
     text-transform: uppercase;
 }
-
-#stay .container > div > form input,
-#stay .container > div > form textarea {
+#stay .container form input,
+#stay .container form textarea {
     background-color: #eaeef1;
     width: 100%;
     border-radius: 3px;
     border: none;
     outline: none;
 }
-#stay .container > div  form input{
+#stay .container  form input{
     display:inline-block;
     height:44px;
-    width: 240px;
+    width: 100%;
     padding: 12px;
     font-size: 14px;
     line-height:26px;
     margin-bottom: 30px;
 }
-#stay .container > div  form textarea{
+#stay .container form textarea{
     display:inline-block;
+    width: 100%;
     padding: 12px;
     font-size: 14px;
     line-height:26px;
     height:159px;
 }
-#stay .container form #form-info{
-    display:flex;
-    justify-content:space-between;
-}
-#stay .container form #form-info div{
-    width: calc( (100% - 22px) / 2);
-}
 #stay button{
     display:inline-block;
-    width: 147px;
+    max-width: 147px;
     height:40px;
     margin-top: 30px;
     border-radius: 3px;
+    padding:10px;
 }
 #stay button:hover{
     background-color: #23b7a4;
     border: 2px solid #23b7a4;
     color:white;
     cursor: pointer;
-}
+} 
 
-
+/* FOOTER */
 footer{
     background-color:#3a454d;
     height:95px;
@@ -691,4 +691,259 @@ footer .container ul li:nth-child(4) a {
 }
 footer .container ul li:nth-child(5) a {
     background-image: url(images/be.png);
+}
+
+/* responsive */
+@media screen and (max-width: 960px){
+
+    #hero .container h2,
+    #hero .container p,
+    #hero .container div
+    {
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    #hero .container ul{
+        position:static;
+        text-align: center;
+        margin-top: 100px;
+    }
+
+
+    #team-list-about div:first-child,
+    #team-list-about div:last-child {
+        width: 50%;
+    }
+    #team-list .info {
+        background-color: #e1e6ea;
+        padding: 20px 20px 0px 20px;
+        text-align: center;
+    }
+    #work .container #work-list > div:hover .mask h4{
+        display: block;
+        line-height:25px;
+        background-color: #292f36;
+        width: 100%;
+        padding-left:20px;
+        font-size: 18px;
+        font-weight: normal;
+        color:#ffffff;
+        text-transform: uppercase;
+    }
+    #stay .container form #form-info {
+        display: block;
+    }
+    #stay .container form #form-info > div {
+        width: 100%;
+        /* width: calc( (100% - 30px) / 2); */
+    }
+}
+
+@media screen and (max-width: 845px){
+    header {
+        height:auto;
+    }
+    header .container {
+        display: block;
+        
+    }
+    header .container h1 {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 845px){
+    h2.has-first-block {
+        text-align: center;
+    }
+    header .container h1 {
+        line-height:50px;
+    }
+    header ul{
+        text-align: center;
+    }
+    header ul li {
+        display: inline;
+        line-height: 50px;
+    }
+    #about .container {
+        padding-top: 30px;
+    }
+    #hero .container h2 {
+        padding-top: 100px;
+    }
+    #hero {
+        height: 530px;
+    }
+    #team-list-about {
+        display: block;
+    }
+    #team-list-about div:first-child, 
+    #team-list-about div:last-child {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    #about .container h2 {
+        padding-bottom: 25px;
+    }
+    #about .container #team-list-about ul {
+        padding: 10px 0px;
+        text-align: center;
+    }
+    #team-list {
+        padding-top: 30px;
+    }
+    #team {
+        margin-bottom: 50px;
+        padding-top: 25px;
+    }
+    #team-list > div {
+        width: calc( (100% - 30px) / 2 );
+        margin-bottom: 30px;
+    }
+    #team-list {
+        flex-wrap: wrap;
+    }
+    #team-list img {
+        display: block;
+        width: 100%;
+    }
+    #work {
+        background-color: #3a454d;
+        padding-top: 26px;
+    }
+    #work .container h2 {
+        margin-bottom: 20px;
+        color: white;
+    }
+    #work .container #work-list > div {
+        position: relative;
+        width: calc( (100% - 30px ) / 2);
+        margin-bottom: 30px;
+    }
+    #work .container #action {
+        padding: 10px 0px 30px 0px;
+    }
+    div#do {
+        padding-top: 34px;
+        padding-bottom: 0px;
+    }
+    div#do h2 {
+        margin-bottom: 40px;
+    }
+    div#do .container ul li {
+        width: calc( (100% -30px)/2);
+    }
+    div#do li {
+        list-style: none;
+        margin-bottom: 44px;
+    }
+    div#features {
+        background-color: #3a454d;
+        padding-top: 30px;
+        padding-bottom: 35px;
+    }
+    div#features-list {
+        display: block;
+        justify-content: space-between;
+    }
+    div#features-list div {
+        width: 100%;
+        text-align: center;
+    }
+    div#features-list p {
+        text-align: left;
+        width: 100%;
+        color: #dcdfe1;
+        line-height: 26px;
+        margin-bottom: 40px;
+    }
+    #features-list img, p {
+        display: block;
+        margin: 0px auto;
+    }
+    div#features .container h4 {
+        margin-top: 10px;
+    }
+    #stay h2 {
+        margin-bottom: 25px;
+    }
+    div#stay {
+        color: #292f36;
+        margin-top: 26px;
+    }
+    #stay-info {
+        padding-top: 156px;
+    }
+    .container {
+        width: 100%;
+    }
+    #stay-info h4 {
+        margin-bottom: 10px;
+    }
+    #stay .container > div {
+        margin-top: 37px;
+        display: inline-block;
+    }
+    #stay-info {
+        padding-top: 28px;
+    }
+    #stay-info, #stay-info-f {
+        width: 100%;
+    }
+    #stay-info {
+        padding-top: 1px;
+    }
+    #stay .container >div > div > form {
+        margin-left: 0px;
+        background-color: white;
+        padding-bottom: 10px;
+    }
+    #stay .container >div > div > form {
+        padding: 0px;
+    }
+    #stay .container form input {
+        margin-bottom: 10px;
+    }
+    #stay button {
+        margin: 15px auto;
+        padding: 10px;
+    }
+    #work .container #action {
+        display: flex;
+        justify-content: center;
+    }
+    footer {
+        background-color: #3a454d;
+        height: auto;
+    }
+}
+
+
+@media screen and (max-width: 500px){
+    #hero .container h2 {
+        padding-top: 30px;
+    }
+    #stay .container #action {
+        display: flex;
+        justify-content: center;
+        
+    }
+    footer {
+        height: auto;
+    }
+    footer .container {
+        display: block;
+    }
+    footer .container p {
+        text-align: center;
+        line-height:50px;
+    }
+    footer .container  ul{
+        text-align: center;
+        justify-content: center;
+        line-height:50px;
+    }
 }
